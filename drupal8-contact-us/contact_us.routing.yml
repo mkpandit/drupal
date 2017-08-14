@@ -1,0 +1,7 @@
+freepilot.form:
+  path: '/path-to-contact-us-page/contact'
+  defaults:
+    _form: '\Drupal\contact_us\Form\Contact_us'
+    _title: 'Contact Us - Drupal 8'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,6 @@
+name: Drupal 8 Contact Us
+description: Creates a block for Contact Us Page
+package: Custom
+
+type: module
+core: 8.x

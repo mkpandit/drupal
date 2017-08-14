@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Pager Example.
+ */
+
+/**
+ * @defgroup pager_example Example: Pager
+ * @ingroup examples
+ * @{
+ * Output nodes in the table with pagination.
+ *
+ * @see \Drupal\Core\Database\Query\PagerSelectExtender
+ */
+
+/**
+ * Implements hook_theme().
+ */
+ 
+ use Drupal\Component\Utility\SafeMarkup;
+ 
+function contact_us_mail($key, &$message, $params){
+	$options = array('langcode' => $message['langcode'],);
+	switch ($key) {
+		case 'send_mail':
+			$message['from'] = \Drupal::config('system.site')->get('mail');
+			$message['subject'] = $params['subject'];
+			$message['body'][] = SafeMarkup::checkPlain($params['message']);
+			break;
+	}	
+}
